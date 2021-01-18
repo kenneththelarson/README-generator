@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = () => {
@@ -45,9 +46,16 @@ const questions = () => {
             }
         },
         {
+            type: 'confirm',
+            name: 'confirmInstall',
+            message: 'Does this project require installation instructions?',
+            default: true
+        },
+        {
             type: 'input',
             name: 'installation',
-            message: 'Describe the installation requirements:'
+            message: 'Describe the installation requirements:',
+            when: ({ confirmInstall }) => confirmInstall
         },
         {
             type: 'input',
@@ -70,13 +78,7 @@ const questions = () => {
             type: 'input',
             name: 'contributonGuidelines',
             message: 'Define your contribution guidelines for this project:',
-            when: ({ contributions }) => {
-                if (contributions) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
+            when: ({ contributions }) => contributions
         },
         {
             type: 'confirm',
@@ -88,13 +90,7 @@ const questions = () => {
             type: 'input',
             name: 'testing',
             message: 'Please detail the testing instructions for the user:',
-            when: ({ confirmTest }) => {
-                if (confirmTest) {
-                    return true;
-                } else {
-                    return false;
-                }
-            },
+            when: ({ confirmTest }) => confirmTest,
             validate: testingInput => {
                 if (testingInput) {
                     return true;
@@ -118,13 +114,18 @@ const questions = () => {
             }
         }
     ])
-}
+    .then(data => {
+        return generateMarkdown(data);
+    });
+};
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    questions();
+}
 
 // Function call to initialize app
 init();
