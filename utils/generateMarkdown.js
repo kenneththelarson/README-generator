@@ -4,7 +4,7 @@ function renderLicenseBadge(data) {
   if (!data.license || data.license === 'None') {
     return '';
   } else {
-    return renderLicenseLink (data);
+    return renderLicenseLink (data.license);
   }
 }
 
@@ -35,7 +35,7 @@ function renderLicenseSection(license) {
     return '';
   } else {
     return `## License
-    * This project is licensed under the ${license} license`;
+    This project is licensed under the ${license} license`;
   }
 };
 
@@ -56,11 +56,11 @@ function renderContributionSection(data) {
   }
 };
 
-function contributionsIndex(contributionGuidelines) {
-  if (!contributionGuidelines) {
+function contributionsIndex(data) {
+  if (!data.contributions) {
     return '';
   } else {
-    return `* [Contribution Guidelines](#contribution Guidelines)`;
+    return `* [Contributions](#contributions)`;
   }
 };
 
@@ -87,7 +87,7 @@ function renderTestingIndex(testing) {
 function generateMarkdown(data) {
   return `# ${data.title}
 
-  ${renderLicenseBadge}${renderLicenseLink}
+  ${renderLicenseBadge(data)}${renderLicenseLink(data)}
 
   ## Description
   ${data.description}
@@ -95,9 +95,9 @@ function generateMarkdown(data) {
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
-  ${contributionsIndex}
-  ${licenseIndexCheck}
-  ${renderTestingIndex}
+  ${contributionsIndex(data)}
+  ${licenseIndexCheck(data)}
+  ${renderTestingIndex(data)}
   
   ## Installation
   ${data.installation}
@@ -105,15 +105,15 @@ function generateMarkdown(data) {
   ## Usage
   ${data.usage}
 
-  ${renderContributionSection}
+  ${renderContributionSection(data.contributionGuidelines)}
 
-  ${renderLicenseSection}
+  ${renderLicenseSection(license)}
 
-  ${renderTestingSection}
+  ${renderTestingSection(data.testing)}
 
   ## Questions
-  Created by: [a link](https://github.com/${data.username})
-  For further questions please contact [mailto](mailto:${data.email})
+  Created by: [${data.username}](https://github.com/${data.username})
+  For further questions please contact [${data.email}](mailto:${data.email})
 
 `;
 }

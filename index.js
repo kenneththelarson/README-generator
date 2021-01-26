@@ -87,7 +87,15 @@ const questions = () => {
             type: 'input',
             name: 'contributonGuidelines',
             message: 'Define your contribution guidelines for this project:',
-            when: ({ contributions }) => contributions
+            when: ({ contributions }) => contributions,
+            validate: contributionInput => {
+                if (contributionInput) {
+                    return true;
+                } else {
+                    console.log('Please define your contribution guidelines!');
+                    return false;
+                }
+            }
         },
         {
             type: 'confirm',
