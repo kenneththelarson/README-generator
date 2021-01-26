@@ -61,7 +61,15 @@ const questions = () => {
         {
             type: 'input',
             name: 'usage',
-            message: 'Describe the usage of your project:'
+            message: 'Describe the usage of your project:',
+            validate: usageInput => {
+                if (usageInput) {
+                    return true;
+                } else {
+                    console.log('Please describe what your project is used for!');
+                    return false;
+                }
+            }
         },
         {
             type: 'list',
