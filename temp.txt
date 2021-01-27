@@ -1,7 +1,0 @@
-User input fills out a README.md file organized and ready to place into a repository.
-
-In your terminal, install Node.js, navigate to your repository and initiate the command 'node index.js'.
-
-Input answers about your project by specific questions asked in the terminal and it exports a README.md file into the 'dist' folder.
-
-Fill out the appropriate responses in order to create a professional looking README.md.

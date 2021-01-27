@@ -56,26 +56,26 @@ function contributionsIndex(confirmContributions) {
   }
 };
 
-const renderContributionSection = check => {
-  if(!check) {
+function renderContributionSection(confirmContributions, contribution) {
+  if(!confirmContributions) {
     return '';
   } else {
     return `## Contribution Guidelines
-    ${data.contribution}`;
+    ${contribution}`;
   }
 };
 
-function renderTestingSection(data) {
-  if(!data.confirmTest) {
+function renderTestingSection(confirmTest, testing) {
+  if(!confirmTest) {
     return '';
   } else {
     return `## Testing
-    ${data.testing}`;
+    ${testing}`;
   }
 };
 
-function renderTestingIndex(testing) {
-  if (!testing) {
+function renderTestingIndex(confirmTest) {
+  if (!confirmTest) {
     return '';
   } else {
     return '* [Testing](#testing)';
@@ -96,9 +96,9 @@ function generateMarkdown(data) {
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
-  ${contributionsIndex(data)}
-  ${licenseIndexCheck(data)}
-  ${renderTestingIndex(data)}
+  ${contributionsIndex(data.confirmContributions)}
+  ${licenseIndexCheck(data.license)}
+  ${renderTestingIndex(data.confirmTest)}
   
   ## Installation
   ${data.installation}
