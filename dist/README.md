@@ -1,6 +1,6 @@
 # README Generator
 
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
   ## Description
   User input fills out a README.md file organized and ready to place into a repository.
@@ -8,7 +8,7 @@
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Contribution Guidelines](#contribution Guidelines)
+  * [Contributions](#contributions)
   * [License](#license)
   * [Testing](#testing)
   
@@ -21,10 +21,9 @@
   
 
   ## License
-    * This project is licensed under the [object Object] license
+    This project is licensed under the BSD license
 
-  ## Testing
-    Fill out the appropriate responses in order to create a professional looking README.md.
+  
 
   ## Questions
   Created by: [kenneththelarson](https://github.com/kenneththelarson)

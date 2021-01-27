@@ -1,7 +1,6 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const { resolve } = require('path');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
@@ -79,15 +78,15 @@ const questions = () => {
         },
         {
             type: 'confirm',
-            name: 'contributions',
+            name: 'confirmContributions',
             message: 'Will you allow contributions on this project?',
             default: true
         },
         {
             type: 'input',
-            name: 'contributonGuidelines',
+            name: 'contributon',
             message: 'Define your contribution guidelines for this project:',
-            when: ({ contributions }) => contributions,
+            when: ({ confirmContributions }) => confirmContributions,
             validate: contributionInput => {
                 if (contributionInput) {
                     return true;
@@ -135,6 +134,7 @@ const questions = () => {
         return generateMarkdown(data);
     })
     .then(pageMarkDown => {
+        console.log('File created!');
         return writeToFile(pageMarkDown);
     })
     .catch(err => {

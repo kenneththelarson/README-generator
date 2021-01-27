@@ -4,7 +4,7 @@ function renderLicenseBadge(data) {
   if (!data.license || data.license === 'None') {
     return '';
   } else {
-    return renderLicenseLink (data.license);
+    return renderLicenseLink (data);
   }
 }
 
@@ -47,25 +47,26 @@ function licenseIndexCheck(license) {
   }
 };
 
-function renderContributionSection(data) {
-  if(!data.contributionGuidelines) {
-    return '';
-  } else {
-    return `## Contribution Guidelines
-    ${data.contributionGuidelines}`;
-  }
-};
 
-function contributionsIndex(data) {
-  if (!data.contributions) {
+function contributionsIndex(confirmContributions) {
+  if (!confirmContributions) {
     return '';
   } else {
     return `* [Contributions](#contributions)`;
   }
 };
 
+const renderContributionSection = check => {
+  if(!check) {
+    return '';
+  } else {
+    return `## Contribution Guidelines
+    ${data.contribution}`;
+  }
+};
+
 function renderTestingSection(data) {
-  if(!data.testing) {
+  if(!data.confirmTest) {
     return '';
   } else {
     return `## Testing
@@ -87,7 +88,7 @@ function renderTestingIndex(testing) {
 function generateMarkdown(data) {
   return `# ${data.title}
 
-  ${renderLicenseBadge(data)}${renderLicenseLink(data)}
+  ${renderLicenseBadge(data)}
 
   ## Description
   ${data.description}
@@ -105,14 +106,15 @@ function generateMarkdown(data) {
   ## Usage
   ${data.usage}
 
-  ${renderContributionSection(data.contributionGuidelines)}
+  ${renderContributionSection(data.contribution)}
 
-  ${renderLicenseSection(license)}
+  ${renderLicenseSection(data.license)}
 
   ${renderTestingSection(data.testing)}
 
   ## Questions
   Created by: [${data.username}](https://github.com/${data.username})
+  
   For further questions please contact [${data.email}](mailto:${data.email})
 
 `;
