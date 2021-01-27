@@ -1,5 +1,7 @@
 # README Generator
 
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
   ## Description
   User input fills out a README.md file organized and ready to place into a repository.
 

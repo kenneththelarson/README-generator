@@ -1,7 +1,5 @@
 # README Generator
 
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
   ## Description
   A Node application that uses command line prompts to generate a README.md file for users to add to their GitHub projects.
 
