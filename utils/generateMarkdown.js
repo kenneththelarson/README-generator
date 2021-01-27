@@ -106,11 +106,11 @@ function generateMarkdown(data) {
   ## Usage
   ${data.usage}
 
-  ${renderContributionSection(data.contribution)}
+  ${renderContributionSection(data)}
 
   ${renderLicenseSection(data.license)}
 
-  ${renderTestingSection(data.testing)}
+  ${renderTestingSection(data)}
 
   ## Questions
   Created by: [${data.username}](https://github.com/${data.username})
