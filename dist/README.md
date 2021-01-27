@@ -1,9 +1,9 @@
-# sianooeig
+# README Generator
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description
-  fidsoanoiue
+  User input fills out a README.md file organized and ready to place into a repository.
 
   ## Table of Contents
   * [Installation](#installation)
@@ -13,22 +13,22 @@
   * [Testing](#testing)
   
   ## Installation
-  fidsoaneng
+  In your terminal, install Node.js, navigate to your repository and initiate the command 'node index.js'.
 
   ## Usage
-  sadone
+  Input answers about your project by specific questions asked in the terminal and it exports a README.md file into the 'dist' folder.
 
   ## Contribution Guidelines
-    iodasnneg
+    Anyone can contribute.
 
   ## License
     This project is licensed under the MIT license
 
   ## Testing
-    saoinoekg
+    Fill out the appropriate responses in order to create a professional looking README.md.
 
   ## Questions
-  Created by: [fdksla](https://github.com/fdksla)
+  Created by: [kenneththelarson](https://github.com/kenneththelarson)
   
-  For further questions please contact [sdlaki](mailto:sdlaki)
+  For further questions please contact [kenneththelarson@gmail.com](mailto:kenneththelarson@gmail.com)
 
