@@ -56,21 +56,21 @@ function contributionsIndex(confirmContributions) {
   }
 };
 
-function renderContributionSection(confirmContributions, contribution) {
-  if(!confirmContributions) {
+function renderContributionSection(data) {
+  if(!data.confirmContributions) {
     return '';
   } else {
     return `## Contribution Guidelines
-    ${contribution}`;
+    ${data.contribution}`;
   }
 };
 
-function renderTestingSection(confirmTest, testing) {
-  if(!confirmTest) {
+function renderTestingSection(data) {
+  if(!data.confirmTest) {
     return '';
   } else {
     return `## Testing
-    ${testing}`;
+    ${data.testing}`;
   }
 };
 

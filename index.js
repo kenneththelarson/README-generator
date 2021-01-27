@@ -84,7 +84,7 @@ const questions = () => {
         },
         {
             type: 'input',
-            name: 'contributon',
+            name: 'contribution',
             message: 'Define your contribution guidelines for this project:',
             when: ({ confirmContributions }) => confirmContributions,
             validate: contributionInput => {
